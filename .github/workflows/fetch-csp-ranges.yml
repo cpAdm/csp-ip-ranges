@@ -34,10 +34,10 @@ jobs:
       - name: Check if there are changes
         id: verify-changed-files
         run: |
-          if git diff --quiet data/; then
-            echo "changed=false" >> $GITHUB_OUTPUT
-          else
+          if [[ -n "$(git status --porcelain -- data/)" ]]; then
             echo "changed=true" >> $GITHUB_OUTPUT
+          else
+            echo "changed=false" >> $GITHUB_OUTPUT
           fi
 
       - name: Commit and push changes
