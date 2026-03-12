@@ -1,5 +1,7 @@
 # CSP IP Ranges
 
+[![Daily CSP IP Ranges Fetch](https://github.com/cpAdm/csp-ip-ranges/actions/workflows/fetch-csp-ranges.yml/badge.svg)](https://github.com/cpAdm/csp-ip-ranges/actions/workflows/fetch-csp-ranges.yml)
+
 Aggregated cloud provider CIDR ranges from public provider data sources.
 
 ## Supported Providers
