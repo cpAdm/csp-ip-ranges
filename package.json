@@ -1,0 +1,38 @@
+{
+	"name": "csp-ip-ranges",
+	"version": "0.1.0",
+	"description": "Fetch and manage cloud service provider IP ranges",
+	"type": "module",
+	"engines": {
+		"node": ">=24.0.0"
+	},
+	"scripts": {
+		"ts-check": "tsc --noEmit",
+		"format": "prettier --write .",
+		"format:check": "prettier --check .",
+		"fetch": "node src/cli.ts"
+	},
+	"keywords": [
+		"cloud",
+		"ip-ranges",
+		"aws",
+		"azure",
+		"gcp",
+		"cloudflare",
+		"digital-ocean",
+		"ibm",
+		"oracle",
+		"vultr"
+	],
+	"author": "cpAdm",
+	"license": "MIT",
+	"dependencies": {
+		"ajv": "^8.18.0",
+		"ajv-formats": "^3.0.0"
+	},
+	"devDependencies": {
+		"@types/node": "^24.1.0",
+		"prettier": "^3.8.0",
+		"typescript": "^5.9.0"
+	}
+}

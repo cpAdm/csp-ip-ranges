@@ -1,0 +1,104 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"required": [
+		"repositoryVersion",
+		"timestamp",
+		"totalPrefixes",
+		"successCount",
+		"failureCount",
+		"failed",
+		"prefixes"
+	],
+	"properties": {
+		"repositoryVersion": {
+			"type": "string"
+		},
+		"timestamp": {
+			"type": "string",
+			"format": "date-time"
+		},
+		"totalPrefixes": {
+			"type": "integer",
+			"minimum": 0
+		},
+		"successCount": {
+			"type": "integer",
+			"minimum": 0
+		},
+		"failureCount": {
+			"type": "integer",
+			"minimum": 0
+		},
+		"failed": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"required": ["provider", "error"],
+				"properties": {
+					"provider": {
+						"type": "string"
+					},
+					"error": {
+						"type": "string"
+					}
+				}
+			}
+		},
+		"prefixes": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"required": ["csp", "ipPrefix", "meta"],
+				"properties": {
+					"csp": {
+						"type": "string",
+						"enum": [
+							"AWS",
+							"azure",
+							"GCP",
+							"cloudflare",
+							"digital_ocean",
+							"IBM",
+							"oracle_cloud",
+							"vultr"
+						]
+					},
+					"ipPrefix": {
+						"type": "string"
+					},
+					"meta": {
+						"type": "object",
+						"properties": {
+							"region": {
+								"type": "string"
+							},
+							"service": {
+								"type": "string"
+							},
+							"countryCode": {
+								"type": "string"
+							},
+							"subdivisionCode": {
+								"type": "string"
+							},
+							"city": {
+								"type": "string"
+							},
+							"postalCode": {
+								"type": "string"
+							},
+							"tags": {
+								"type": "array",
+								"items": {
+									"type": "string"
+								}
+							}
+						},
+						"additionalProperties": true
+					}
+				}
+			}
+		}
+	}
+}
